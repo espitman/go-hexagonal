@@ -7,11 +7,10 @@ import (
 )
 
 func main() {
-
 	userRepository := repository.NewUserRepository()
 	userService := service.NewUserService(userRepository)
 	userHandler := http.NewUserHandler(userService)
 
-	httpServer := http.NewHttpServer("3000", userHandler)
+	httpServer := http.NewServer("3000", userHandler)
 	httpServer.Run()
 }

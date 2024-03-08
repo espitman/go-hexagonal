@@ -2,8 +2,8 @@ package service
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"hexad/internal/adapter/database/mongodb/repository"
 	"hexad/internal/core/domain"
+	"hexad/internal/core/port"
 )
 
 /**
@@ -11,10 +11,10 @@ import (
  */
 
 type UserService struct {
-	UserRepository *repository.UserRepository
+	UserRepository port.UserRepository
 }
 
-func NewUserService(userRepository *repository.UserRepository) *UserService {
+func NewUserService(userRepository port.UserRepository) *UserService {
 	return &UserService{
 		UserRepository: userRepository,
 	}

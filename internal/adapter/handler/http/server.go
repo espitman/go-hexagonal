@@ -9,7 +9,7 @@ type Server struct {
 	UserHandler *UserHandler
 }
 
-func NewHttpServer(
+func NewServer(
 	port string,
 	userHandler *UserHandler,
 ) Server {
@@ -23,5 +23,5 @@ func (s *Server) Run() {
 	app := fiber.New()
 	routes := newRouter(s.UserHandler)
 	routes.serve(app)
-	app.Listen(":" + s.Port)
+	_ = app.Listen(":" + s.Port)
 }
