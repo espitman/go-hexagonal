@@ -2,6 +2,7 @@ package port
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"hexad/internal/adapter/database/mongodb"
 	"hexad/internal/core/domain"
 )
 
@@ -18,5 +19,5 @@ type UserService interface {
  */
 
 type UserRepository interface {
-	List(ctx *fiber.Ctx, skip, limit uint64) ([]domain.User, error)
+	List(ctx *fiber.Ctx, skip, limit uint64) ([]mongodb.UserSchema, error)
 }

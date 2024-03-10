@@ -1,13 +1,13 @@
 package main
 
 import (
-	"hexad/internal/adapter/database/mongodb/repository"
+	"hexad/internal/adapter/database/mongodb"
 	"hexad/internal/adapter/handler/http"
 	"hexad/internal/core/service"
 )
 
 func main() {
-	userRepository := repository.NewUserRepository()
+	userRepository := mongodb.NewUserRepository()
 	userService := service.NewUserService(userRepository)
 	userHandler := http.NewUserHandler(userService)
 
