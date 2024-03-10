@@ -22,12 +22,5 @@ func NewUserService(userRepository port.UserRepository) *UserService {
 
 func (s *UserService) List(ctx *fiber.Ctx, skip, limit uint64) ([]domain.User, error) {
 	users, _ := s.UserRepository.List(ctx, skip, limit)
-	var resp []domain.User
-	for _, user := range users {
-		resp = append(resp, domain.User{
-			FName: user.FName,
-			LName: user.LName,
-		})
-	}
-	return resp, nil
+	return users, nil
 }

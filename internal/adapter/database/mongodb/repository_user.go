@@ -2,6 +2,7 @@ package mongodb
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"hexad/internal/core/domain"
 )
 
 type UserRepository struct {
@@ -15,12 +16,12 @@ func NewUserRepository() *UserRepository {
 	return &UserRepository{}
 }
 
-func (s *UserRepository) List(ctx *fiber.Ctx, skip, limit uint64) ([]UserSchema, error) {
-	var resp []UserSchema
-	resp = append(resp, UserSchema{
+func (s *UserRepository) List(ctx *fiber.Ctx, skip, limit uint64) ([]domain.User, error) {
+	var resp []domain.User
+	resp = append(resp, domain.User{
 		FName: "Saeed",
 		LName: "Heidari",
-	}, UserSchema{
+	}, domain.User{
 		FName: "John",
 		LName: "Smith",
 	})
