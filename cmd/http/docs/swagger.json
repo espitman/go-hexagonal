@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "description": "This is jabama Price service",
-        "title": "Salvation2 - price service",
+        "title": "Go Hexagonal Boilerplate",
         "contact": {
             "name": "API Support",
             "email": "s.heidar@jabama.com"
@@ -90,7 +90,7 @@
         }
     },
     "definitions": {
-        "git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarCreateRequestDto": {
+        "github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarCreateRequestDto": {
             "type": "object",
             "required": [
                 "days"
@@ -99,12 +99,12 @@
                 "days": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto"
+                        "$ref": "#/definitions/github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarDayDto"
                     }
                 }
             }
         },
-        "git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto": {
+        "github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarDayDto": {
             "type": "object",
             "required": [
                 "date",
@@ -134,7 +134,7 @@
                 }
             }
         },
-        "git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarGetResponseDto": {
+        "github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarGetResponseDto": {
             "type": "object",
             "properties": {
                 "code": {
@@ -149,7 +149,7 @@
                         "days": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto"
+                                "$ref": "#/definitions/github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarDayDto"
                             }
                         }
                     }

@@ -1,15 +1,15 @@
 basePath: /
 definitions:
-  git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarCreateRequestDto:
+  github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarCreateRequestDto:
     properties:
       days:
         items:
-          $ref: '#/definitions/git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto'
+          $ref: '#/definitions/github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarDayDto'
         type: array
     required:
     - days
     type: object
-  git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto:
+  github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarDayDto:
     properties:
       date:
         type: string
@@ -30,7 +30,7 @@ definitions:
     - jalali
     - type
     type: object
-  git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarGetResponseDto:
+  github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarGetResponseDto:
     properties:
       code:
         type: integer
@@ -40,7 +40,7 @@ definitions:
         properties:
           days:
             items:
-              $ref: '#/definitions/git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto'
+              $ref: '#/definitions/github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarDayDto'
             type: array
         type: object
     type: object
@@ -93,7 +93,7 @@ info:
     email: s.heidar@jabama.com
     name: API Support
   description: This is jabama Price service
-  title: Salvation2 - price service
+  title: Go Hexagonal Boilerplate
   version: "1.0"
 paths:
   /api/v1/calendar:

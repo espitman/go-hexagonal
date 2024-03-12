@@ -98,7 +98,7 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarCreateRequestDto": {
+        "github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarCreateRequestDto": {
             "type": "object",
             "required": [
                 "days"
@@ -107,12 +107,12 @@ const docTemplate = `{
                 "days": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto"
+                        "$ref": "#/definitions/github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarDayDto"
                     }
                 }
             }
         },
-        "git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto": {
+        "github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarDayDto": {
             "type": "object",
             "required": [
                 "date",
@@ -142,7 +142,7 @@ const docTemplate = `{
                 }
             }
         },
-        "git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarGetResponseDto": {
+        "github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarGetResponseDto": {
             "type": "object",
             "properties": {
                 "code": {
@@ -157,7 +157,7 @@ const docTemplate = `{
                         "days": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto"
+                                "$ref": "#/definitions/github.com_espitman_go-hexagonal_internal_adapter_handler_http.calendarDayDto"
                             }
                         }
                     }
@@ -246,7 +246,7 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "",
 	BasePath:         "/",
 	Schemes:          []string{},
-	Title:            "Salvation2 - price service",
+	Title:            "Go Hexagonal Boilerplate",
 	Description:      "This is jabama Price service",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,

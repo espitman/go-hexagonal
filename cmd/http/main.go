@@ -9,7 +9,7 @@ import (
 	superConf "github.com/espitman/go-super-conf"
 )
 
-// @title           Salvation2 - price service
+// @title           Go Hexagonal Boilerplate
 // @version         1.0
 // @description     This is jabama Price service
 // @contact.name   API Support
