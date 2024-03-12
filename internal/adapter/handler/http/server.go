@@ -5,23 +5,23 @@ import (
 )
 
 type Server struct {
-	Port        string
-	UserHandler *UserHandler
+	Port            string
+	CalendarHandler *CalendarHandler
 }
 
 func NewServer(
 	port string,
-	userHandler *UserHandler,
+	userHandler *CalendarHandler,
 ) Server {
 	return Server{
-		Port:        port,
-		UserHandler: userHandler,
+		Port:            port,
+		CalendarHandler: userHandler,
 	}
 }
 
 func (s *Server) Run() {
 	app := fiber.New()
-	routes := newRouter(s.UserHandler)
+	routes := newRouter(s.CalendarHandler)
 	routes.serve(app)
 	_ = app.Listen(":" + s.Port)
 }

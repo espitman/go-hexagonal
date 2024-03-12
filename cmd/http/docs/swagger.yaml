@@ -1,0 +1,155 @@
+basePath: /
+definitions:
+  git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarCreateRequestDto:
+    properties:
+      days:
+        items:
+          $ref: '#/definitions/git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto'
+        type: array
+    required:
+    - days
+    type: object
+  git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto:
+    properties:
+      date:
+        type: string
+      isCustomHoliday:
+        type: boolean
+      isPeak:
+        type: boolean
+      jalali:
+        type: string
+      type:
+        enum:
+        - base
+        - weekend
+        - holiday
+        type: string
+    required:
+    - date
+    - jalali
+    - type
+    type: object
+  git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarGetResponseDto:
+    properties:
+      code:
+        type: integer
+      message:
+        type: string
+      payload:
+        properties:
+          days:
+            items:
+              $ref: '#/definitions/git.alibaba.ir_taraaz_salvation2_monorepo_price-service_internal_adapter_handler_http.calendarDayDto'
+            type: array
+        type: object
+    type: object
+  internal_adapter_handler_http.calendarCreateRequestDto:
+    properties:
+      days:
+        items:
+          $ref: '#/definitions/internal_adapter_handler_http.calendarDayDto'
+        type: array
+    required:
+    - days
+    type: object
+  internal_adapter_handler_http.calendarDayDto:
+    properties:
+      date:
+        type: string
+      isCustomHoliday:
+        type: boolean
+      isPeak:
+        type: boolean
+      jalali:
+        type: string
+      type:
+        enum:
+        - base
+        - weekend
+        - holiday
+        type: string
+    required:
+    - date
+    - jalali
+    - type
+    type: object
+  internal_adapter_handler_http.calendarGetResponseDto:
+    properties:
+      code:
+        type: integer
+      message:
+        type: string
+      payload:
+        properties:
+          days:
+            items:
+              $ref: '#/definitions/internal_adapter_handler_http.calendarDayDto'
+            type: array
+        type: object
+    type: object
+info:
+  contact:
+    email: s.heidar@jabama.com
+    name: API Support
+  description: This is jabama Price service
+  title: Salvation2 - price service
+  version: "1.0"
+paths:
+  /api/v1/calendar:
+    get:
+      description: Get
+      parameters:
+      - description: Start date
+        format: YYYY-MM-DD
+        in: query
+        name: start_date
+        type: string
+      - description: 'End date '
+        format: YYYY-MM-DD
+        in: query
+        name: end_date
+        type: string
+      - description: limit
+        in: query
+        name: limit
+        type: integer
+      - description: offset
+        in: query
+        name: offset
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/internal_adapter_handler_http.calendarGetResponseDto'
+      summary: Get
+      tags:
+      - Calendar
+    post:
+      description: Create
+      parameters:
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/internal_adapter_handler_http.calendarCreateRequestDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/internal_adapter_handler_http.calendarGetResponseDto'
+      summary: Create
+      tags:
+      - Calendar
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

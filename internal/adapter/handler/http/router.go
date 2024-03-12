@@ -5,20 +5,23 @@ import (
 )
 
 type Router struct {
-	userHandler *UserHandler
+	fiberRouter     fiber.Router
+	calendarHandler *CalendarHandler
 }
 
 func newRouter(
-	userHandler *UserHandler,
+	calendarHandler *CalendarHandler,
 ) Router {
 	return Router{
-		userHandler: userHandler,
+		calendarHandler: calendarHandler,
 	}
 }
 
 func (r *Router) serve(app *fiber.App) {
+	r.fiberRouter = app.Group("/")
 	api := app.Group("/api")
 	v1 := api.Group("/v1")
 
-	r.userV1Router(v1)
+	r.swaggerRouter()
+	r.calendarV1Router(v1)
 }
